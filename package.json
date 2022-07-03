@@ -1,25 +1,26 @@
 {
-  "name": "express-decorator",
-  "version": "1.1.0",
+  "name": "skyblue-express-decorator",
+  "version": "1.2.0",
   "description": "Use TypeScript decorators to register express restful service.",
   "main": "dist/src/main.js",
   "typings": "dist/src/main.d.ts",
   "scripts": {
     "start": "concurrently \"npm run build-w\"  \"node dist/test/app.js\"",
     "build-w": "tsc -w",
+    "build": "tsc",
     "test": "jest",
-    "release": " tsc && npm run publish"
+    "release": " tsc && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/WinfredWang/express-decorator.git"
+    "url": "https://github.com/SkyBlueFeet/express-decorator.git"
   },
   "files": [
     "dist/src",
     "package.json",
     "tsconfig.json"
   ],
-  "author": "Winfred",
+  "author": "SkyBlueFeet",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.0",
@@ -31,6 +32,7 @@
     "@types/jest": "^20.0.8",
     "concurrently": "^3.5.0",
     "jest": "^21.0.2",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "typescript": "^4.7.4"
   }
 }
