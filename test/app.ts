@@ -1,19 +1,22 @@
-import * as express from 'express';
+import * as express from 'express'
 import { RegisterService } from '../src/main'
-import { TestService } from './service'
+import { TestService, TestOtherService } from './service'
 
-
-var app = express();
+var app = express()
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
+  res.send('Hello World!')
+})
 
-RegisterService(app, [TestService]);
+RegisterService(app, [TestService])
+
+TestOtherService.register(app)
 
 var server = app.listen(3000, function () {
-    var host = server.address().address;
-    var port = server.address().port;
+  // @ts-ignore
+  var host = server.address().address
+  // @ts-ignore
+  var port = server.address().port
 
-    console.log('Example app listening at http://%s:%s', host, port);
+  console.log('Example app listening at http://%s:%s', host, port)
 })
